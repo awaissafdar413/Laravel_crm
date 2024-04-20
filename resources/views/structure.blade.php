@@ -11,6 +11,16 @@
                 @csrf
                 <div class="col-md-12">
                     <div class="mb-3">
+                        <label class="form-label">Subject<span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                            <input name="subject" id="email" type="text" placeholder="Enter your subject"
+                                class="form-control ps-5" placeholder="Your email :">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="mb-3">
                         <label class="form-label">Enter Your Emails (separated by comma):</label>
                         <div class="form-icon position-relative">
                             <i data-feather="mail" class="fea icon-sm icons"></i>

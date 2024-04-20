@@ -61,6 +61,7 @@ class homeController extends Controller
         //     ]
         // );
         $template=new template;
+        $template->subject=$request->input('subject');
         $template->template=$request->input('content');
         $template->save();
         return redirect()->back();
@@ -73,9 +74,10 @@ class homeController extends Controller
     public function emailsend($template)
     {
         $emaildatas = emaildata::all();
+        $subjectData = template::find($template); // Replace with your model and ID retrieval logic
         // Fetch template using ID or other criteria
         foreach ($emaildatas as $emaildata) {
-            dispatch(new webmailjob($emaildata->email,$template))->delay(now()->addSeconds(20));
+            dispatch(new webmailjob($emaildata->email,$template, $subjectData))->delay(now()->addSeconds(20));
         }
         return redirect()->back()->with('success', 'Email sent successfully!');
     }

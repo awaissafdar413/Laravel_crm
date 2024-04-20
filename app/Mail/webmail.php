@@ -14,11 +14,12 @@ class webmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $templateData;
+    public $templateData , $subjectData;
 
-    public function __construct($templateData)
+    public function __construct($templateData , $subjectData)
     {
         $this->templateData = $templateData;
+        $this->subjectData = $subjectData;
     }
 
     public function build()
@@ -31,8 +32,7 @@ class webmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject:'MA Tech Solutions BPO: Your One-Stop Shop for Business Growth
-            ',
+            subject: $this->subjectData['subject'],
         );
     }
 
