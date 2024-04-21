@@ -7,7 +7,7 @@
         <br>
         <br>
         <div class="row">
-            <form action="{{ route('templatestructure') }}" method="POST">
+            <form action="{{ route('templatestructure') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-12">
                     <div class="mb-3">
@@ -16,6 +16,16 @@
                             <i data-feather="mail" class="fea icon-sm icons"></i>
                             <input name="subject" id="email" type="text" placeholder="Enter your subject"
                                 class="form-control ps-5" placeholder="Your email :">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label class="form-label">Select PDF file:<span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                            <input type="file" name="pdf_file" id="pdf_file" placeholder="Enter your subject"
+                                class="form-control ps-5">
                         </div>
                     </div>
                 </div>

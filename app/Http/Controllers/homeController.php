@@ -60,8 +60,21 @@ class homeController extends Controller
         //         'template' => $request->input('content'),
         //     ]
         // );
+        $request->validate([
+            'pdf_file' => 'mimes:pdf',
+             // Validation rules for the uploaded file
+          ]);
+        if($request->hasfile('pdf_file'))
+        {
+            $file = $request->file('pdf_file');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/', $filename);
+        }
+          // Save the file name to
         $template=new template;
         $template->subject=$request->input('subject');
+        $template->attachment='uploads/'. $filename;
         $template->template=$request->input('content');
         $template->save();
         return redirect()->back();
@@ -77,7 +90,8 @@ class homeController extends Controller
         $subjectData = template::find($template); // Replace with your model and ID retrieval logic
         // Fetch template using ID or other criteria
         foreach ($emaildatas as $emaildata) {
-            dispatch(new webmailjob($emaildata->email,$template, $subjectData))->delay(now()->addSeconds(20));
+            dispatch(new webmailjob($emaildata->email,$template, $subjectData));
+            // ->delay(now()->addSeconds(20));
         }
         return redirect()->back()->with('success', 'Email sent successfully!');
     }

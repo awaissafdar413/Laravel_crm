@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Attachment      ;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class webmail extends Mailable
@@ -24,7 +25,9 @@ class webmail extends Mailable
 
     public function build()
     {
-        return $this->view('template.email')->with('templateData', $this->templateData);
+        // dd(public_path($this->subjectData['attachment']));
+        return $this->view('template.email')
+                    ->with('templateData', $this->templateData);
     }
     /**
      * Get the message envelope.
@@ -55,6 +58,10 @@ class webmail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromPath( Public_path( $this->subjectData['attachment']))
+            ->as('Muhammad_Awais.pdf')
+            ->withMime('application/pdf'),
+        ];
     }
 }
