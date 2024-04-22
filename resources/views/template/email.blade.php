@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,8 +8,9 @@
     <title>Document</title>
 </head>
 
-<body> --}}
-    {!! $templateData->template !!}
-{{-- </body>
+<body>
 
-</html> --}}
+    {!! $templateData->template !!}
+</body>
+
+</html>

@@ -17,10 +17,11 @@ class webmail extends Mailable
 
     public $templateData , $subjectData;
 
-    public function __construct($templateData , $subjectData)
+    public function __construct($templateData , $subjectData ,)
     {
         $this->templateData = $templateData;
         $this->subjectData = $subjectData;
+        $this->name = $name;
     }
 
     public function build()
