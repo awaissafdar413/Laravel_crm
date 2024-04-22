@@ -14,7 +14,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 class webmailjob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    protected $recipientEmail , $templateid , $subjectData , ;
+    protected $recipientEmail , $templateid , $subjectData ;
     /**
      * Create a new job instance.
      */
