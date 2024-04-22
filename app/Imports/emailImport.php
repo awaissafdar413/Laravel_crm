@@ -15,8 +15,8 @@ class emailImport implements ToModel
     public function model(array $row)
     {
         return new emaildata([
-            // 'id'=>$row[0],
-            'email'=>$row[0]
+            'name'=>$row[0],
+            'email'=>$row[1]
         ]);
     }
 }

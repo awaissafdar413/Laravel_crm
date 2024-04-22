@@ -10,6 +10,7 @@
     <table class="table">
         <tr>
             <th><strong>ID</strong></th>
+            <th><strong>Name</strong></th>
             <th><strong>Email</strong></th>
 
         </tr>
@@ -17,6 +18,7 @@
         <tr>
             {{-- <td>{{ $data->id }} </td> --}}
             <td>{{ $loop->iteration }} </td>
+            <td>{{ $data->name }}</td>
             <td>{{ $data->email }}</td>
         </tr>
         @endforeach

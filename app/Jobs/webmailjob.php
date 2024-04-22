@@ -14,15 +14,17 @@ use Illuminate\Foundation\Bus\Dispatchable;
 class webmailjob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    protected $recipientEmail , $templateid , $subjectData ;
+    protected $emaildata, $templateid, $subjectData, $user_name;
+    // protected $recipientEmail, $templateid, $subjectData, $user_name;
     /**
      * Create a new job instance.
      */
-    public function __construct($email,$id,$subjectData,)
+    public function __construct($emaildata, $id, $subjectData)
     {
         $this->subjectData = $subjectData;
-        $this->recipientEmail=$email;
-        $this->templateid=$id;
+        $this->emaildata = $emaildata;
+        // $this->$user_name = $user_name;
+        $this->templateid = $id;
     }
 
     /**
@@ -31,7 +33,7 @@ class webmailjob implements ShouldQueue
     public function handle(): void
     {
         $templateData = template::find($this->templateid);
-        Mail::to($this->recipientEmail )->send(new webmail($templateData,$this->subjectData))
-        ->later(now()->addSecounds(30));
+        // dd($this->user_name);
+        Mail::to($this->emaildata['email'])->send(new webmail($templateData, $this->emaildata['name'], $this->subjectData));
     }
 }

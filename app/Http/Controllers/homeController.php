@@ -47,22 +47,19 @@ class homeController extends Controller
         $emailArray = explode(',', $emails);
         foreach ($emailArray as $email) {
             $trimmedEmail = trim($email);
-            emaildata::create(['email' => $trimmedEmail]);
+            emaildata::create([
+                'name'=>$request->name,
+                'email' => $trimmedEmail
+            ]);
         }
         // return redirect()->back()->with('success', 'Emails stored successfully!');
         return redirect('/allemailaddress')->with('success', 'Emails stored successfully!');
     }
     public function templatestructure(Request $request)
     {
-        // $data = template::updateOrcreate(
-        //     ['id' => 1],
-        //     [
-        //         'template' => $request->input('content'),
-        //     ]
-        // );
+        $filename="";
         $request->validate([
             'pdf_file' => 'mimes:pdf',
-             // Validation rules for the uploaded file
           ]);
         if($request->hasfile('pdf_file'))
         {
@@ -79,10 +76,10 @@ class homeController extends Controller
         $template->save();
         return redirect()->back();
     }
-    public function email()
+    public function email($id)
     {
-        $datas = template::where('id', 1)->get();
-        return view('template.email', compact('datas'));
+        $datas = template::where('id', $id)->get();
+        return view('template.template', compact('datas'));
     }
     public function emailsend($template)
     {
@@ -90,10 +87,9 @@ class homeController extends Controller
         $subjectData = template::find($template); // Replace with your model and ID retrieval logic
         // Fetch template using ID or other criteria
         foreach ($emaildatas as $emaildata) {
-            dispatch(new webmailjob($emaildata->email,$template, $subjectData));
+            dispatch(new webmailjob($emaildata, $template, $subjectData));
             // ->delay(now()->addSeconds(20));
         }
         return redirect()->back()->with('success', 'Email sent successfully!');
     }
-    // Mail::to('awaissafdar111@gmail.com')->send(new webmail());
 }

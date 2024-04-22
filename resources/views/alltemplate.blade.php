@@ -118,7 +118,7 @@
                     <div class="container-fluid">
                         <div class="d-flex">
                             <a href="{{ route('emailsend',$data->id) }}" class="btn btn-sm-btn-secoundary">Send</a>
-                            <a href="#" class="btn btn-sm-btn-secoundary">Select</a>
+                            <a href="{{ route('email',$data->id) }}" class="btn btn-sm-btn-secoundary">View</a>
                             <a href="{{ route('templatedelete',$data->id) }}" class="btn btn-sm-btn-secoundary">Delete</a>
                         </div>
                     </div>

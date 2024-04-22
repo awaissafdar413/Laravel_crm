@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
             $table->longText('subject');
-            $table->longText('attachment');
+            $table->longText('attachment')->nullable();
             $table->longText('template');
             $table->timestamps();
         });
