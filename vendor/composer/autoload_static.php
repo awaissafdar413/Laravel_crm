@@ -122,6 +122,8 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Clock\\' => 10,
+            'Propaganistas\\LaravelDisposableEmail\\Tests\\' => 43,
+            'Propaganistas\\LaravelDisposableEmail\\' => 37,
             'PragmaRX\\Google2FA\\' => 19,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
@@ -429,6 +431,14 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
+        'Propaganistas\\LaravelDisposableEmail\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/tests',
+        ),
+        'Propaganistas\\LaravelDisposableEmail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src',
+        ),
         'PragmaRX\\Google2FA\\' => 
         array (
             0 => __DIR__ . '/..' . '/pragmarx/google2fa/src',
@@ -694,7 +704,9 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Actions\\Fortify\\UpdateUserProfileInformation' => __DIR__ . '/../..' . '/app/Actions/Fortify/UpdateUserProfileInformation.php',
         'App\\Actions\\Jetstream\\DeleteUser' => __DIR__ . '/../..' . '/app/Actions/Jetstream/DeleteUser.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\exportController' => __DIR__ . '/../..' . '/app/Http/Controllers/exportController.php',
         'App\\Http\\Controllers\\homeController' => __DIR__ . '/../..' . '/app/Http/Controllers/homeController.php',
+        'App\\Imports\\emailImport' => __DIR__ . '/../..' . '/app/Imports/emailImport.php',
         'App\\Jobs\\webmailjob' => __DIR__ . '/../..' . '/app/Jobs/webmailjob.php',
         'App\\Mail\\webmail' => __DIR__ . '/../..' . '/app/Mail/webmail.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -703,6 +715,7 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\FortifyServiceProvider' => __DIR__ . '/../..' . '/app/Providers/FortifyServiceProvider.php',
         'App\\Providers\\JetstreamServiceProvider' => __DIR__ . '/../..' . '/app/Providers/JetstreamServiceProvider.php',
+        'App\\Rules\\TempEmail' => __DIR__ . '/../..' . '/app/Rules/TempEmail.php',
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -6715,6 +6728,13 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'PragmaRX\\Google2FA\\Support\\Base32' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Support/Base32.php',
         'PragmaRX\\Google2FA\\Support\\Constants' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Support/Constants.php',
         'PragmaRX\\Google2FA\\Support\\QRCode' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Support/QRCode.php',
+        'Propaganistas\\LaravelDisposableEmail\\Console\\UpdateDisposableDomainsCommand' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/Console/UpdateDisposableDomainsCommand.php',
+        'Propaganistas\\LaravelDisposableEmail\\Contracts\\Fetcher' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/Contracts/Fetcher.php',
+        'Propaganistas\\LaravelDisposableEmail\\DisposableDomains' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/DisposableDomains.php',
+        'Propaganistas\\LaravelDisposableEmail\\DisposableEmailServiceProvider' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/DisposableEmailServiceProvider.php',
+        'Propaganistas\\LaravelDisposableEmail\\Facades\\DisposableDomains' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/Facades/DisposableDomains.php',
+        'Propaganistas\\LaravelDisposableEmail\\Fetcher\\DefaultFetcher' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/Fetcher/DefaultFetcher.php',
+        'Propaganistas\\LaravelDisposableEmail\\Validation\\Indisposable' => __DIR__ . '/..' . '/propaganistas/laravel-disposable-email/src/Validation/Indisposable.php',
         'Psr\\Clock\\ClockInterface' => __DIR__ . '/..' . '/psr/clock/src/ClockInterface.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',

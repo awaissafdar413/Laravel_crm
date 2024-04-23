@@ -18,6 +18,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
+        width: 100%;
         padding: 36px;
         border-radius: 22px;
         color: #ffffff;

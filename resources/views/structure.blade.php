@@ -37,6 +37,7 @@
                             <textarea class="form-control ps-5" name="content"
                                ></textarea>
                         </div>
+
                     </div>
                     <input type="submit" id="submit" class="btn btn-primary" value="Save Email Template">
                 </div>

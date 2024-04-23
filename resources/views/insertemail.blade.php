@@ -17,6 +17,9 @@
                         <textarea id="comments" rows="4" class="form-control ps-5" name="emails"
                             placeholder="Enter Your Emails (separated by comma)::"></textarea>
                     </div>
+                    @error('emails')
+                    <div class="alert text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <input type="submit" id="submit" class="btn btn-primary" value="Save All Email Address">
             </div>

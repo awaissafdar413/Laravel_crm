@@ -898,6 +898,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'propaganistas/laravel-disposable-email' => array(
+            'pretty_version' => '2.4.0',
+            'version' => '2.4.0.0',
+            'reference' => 'afe85342b3fb834284498203706fa4b5e16cb9f3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../propaganistas/laravel-disposable-email',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'psr/clock' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',

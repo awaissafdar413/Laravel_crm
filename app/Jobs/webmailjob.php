@@ -34,8 +34,6 @@ class webmailjob implements ShouldQueue
     {
         $templateData = template::find($this->templateid);
         // dd($this->user_name);
-        Mail::to($this->emaildata['email'])
-        ->later(now()->addMinutes(10), new webmail($templateData, $this->emaildata['name'], $this->subjectData));
-        // Mail::to($this->emaildata['email'])->send(new webmail($templateData, $this->emaildata['name'], $this->subjectData));
+        Mail::to($this->emaildata['email'])->send(new webmail($templateData, $this->emaildata['name'], $this->subjectData));
     }
 }

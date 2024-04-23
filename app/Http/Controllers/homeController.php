@@ -47,8 +47,11 @@ class homeController extends Controller
         $emailArray = explode(',', $emails);
         foreach ($emailArray as $email) {
             $trimmedEmail = trim($email);
+            $request->validate([
+                $trimmedEmail => 'email | indisposable', // Add 'indisposable' rule
+              ]);
             emaildata::create([
-                'name'=>$request->name,
+                // 'name'=>$request->name,
                 'email' => $trimmedEmail
             ]);
         }
@@ -88,6 +91,7 @@ class homeController extends Controller
         // Fetch template using ID or other criteria
         foreach ($emaildatas as $emaildata) {
             dispatch(new webmailjob($emaildata, $template, $subjectData));
+            // ->delay(now()->addMinutes(2));
             // ->delay(now()->addSeconds(20));
         }
         return redirect()->back()->with('success', 'Email sent successfully!');
