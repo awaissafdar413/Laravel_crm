@@ -21,7 +21,8 @@
                 </div>
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label class="form-label">Select PDF file:<span class="text-danger">*</span></label>
+                        <label class="form-label">Select PDF file:
+                        </label>
                         <div class="form-icon position-relative">
                             <i data-feather="mail" class="fea icon-sm icons"></i>
                             <input type="file" name="pdf_file" id="pdf_file" placeholder="Enter your subject"
@@ -31,7 +32,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label class="form-label">Enter Your Emails (separated by comma):</label>
+                        <label class="form-label">Enter Your Email structure:</label>
                         <div class="form-icon position-relative">
                             <i data-feather="mail" class="fea icon-sm icons"></i>
                             <textarea class="form-control ps-5" name="content"

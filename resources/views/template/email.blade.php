@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,10 +9,10 @@
 </head>
 
 <body>
-{{-- {{    dd($username)}} --}}
-{{-- {{ dd($userName) }} --}}
+
     <h1> Hi {{ $userName }} , </h1>
     {!! $templateData->template !!}
 </body>
 
-</html>
+</html> --}}
+{!! $templateData->template !!}
