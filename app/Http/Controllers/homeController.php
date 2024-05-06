@@ -13,7 +13,8 @@ class homeController extends Controller
 {
     public function dashboard()
     {
-        $templates = template::where('id', 1)->get();
+        // $templates = template::orderBy('created_at', 'desc')->take(1)->get();
+        $templates = template::latest()->get();
         return view('dashboard', compact('templates'));
     }
     public function allemailaddress()
@@ -90,9 +91,9 @@ class homeController extends Controller
         $subjectData = template::find($template); // Replace with your model and ID retrieval logic
         // Fetch template using ID or other criteria
         foreach ($emaildatas as $emaildata) {
-            dispatch(new webmailjob($emaildata, $template, $subjectData));
+            dispatch(new webmailjob($emaildata, $template, $subjectData))
             // ->delay(now()->addMinutes(2));
-            // ->delay(now()->addSeconds(20));
+            ->delay(now()->addSeconds(20));
         }
         return redirect()->back()->with('success', 'Email sent successfully!');
     }

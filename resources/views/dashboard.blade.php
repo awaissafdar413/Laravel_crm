@@ -29,7 +29,7 @@
                 <div class="form-icon position-relative">
                     <i data-feather="mail" class="fea icon-sm icons"></i>
                     @foreach ($templates as $template )
-                    <textarea name="comments" id="comments" rows="4" class="form-control ps-5" placeholder="Your Message" value="{!! $template->template !!}"></textarea>
+                    <textarea name="comments" id="comments" rows="4" class="form-control ps-5" placeholder="Your Message">{!! $template->template !!}</textarea>
                     @endforeach
                 </div>
             </div>

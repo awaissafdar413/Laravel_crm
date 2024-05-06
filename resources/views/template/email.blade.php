@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,9 +10,9 @@
 
 <body>
 
-    <h1> Hi {{ $userName }} , </h1>
+    <h1> Dear {{ $userName }} , </h1>
     {!! $templateData->template !!}
 </body>
 
-</html> --}}
-{!! $templateData->template !!}
+</html>
+{{-- {!! $templateData->template !!} --}}

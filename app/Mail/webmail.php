@@ -61,7 +61,7 @@ class webmail extends Mailable
      */
     public function attachments(): array
     {
-        if($this->subjectData['attachment'] == "")
+        if($this->subjectData['attachment'] != " ")
         {
         return [
             Attachment::fromPath( Public_path( $this->subjectData['attachment']))
@@ -72,6 +72,7 @@ class webmail extends Mailable
     else{
         return[
             //
+            dd($this->subjectData['attachment'])
         ];
     }
     }
